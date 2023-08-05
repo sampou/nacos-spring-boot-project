@@ -1,0 +1,111 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <maven_javadoc_version>3.0.1</maven_javadoc_version>
+        <maven_surefire_version>2.19.1</maven_surefire_version>
+        <maven-javadoc-plugin.version>2.7</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <groupId>com.alibaba.boot</groupId>
+    <artifactId>nacos-spring-boot-project</artifactId>
+    <version>0.1.1-internal-20230805</version>
+
+    <packaging>pom</packaging>
+
+    <name>Nacos Spring Boot Project</name>
+    <description>Nacos Spring Boot Project</description>
+    <url>https://github.com/nacos-group/nacos-spring-project</url>
+
+    <modules>
+        <module>nacos-spring-boot-parent</module>
+        <module>nacos-spring-boot-base</module>
+        <module>nacos-config-spring-boot-autoconfigure</module>
+        <module>nacos-config-spring-boot-starter</module>
+        <module>nacos-config-spring-boot-actuator</module>
+        <module>nacos-discovery-spring-boot-autoconfigure</module>
+        <module>nacos-discovery-spring-boot-starter</module>
+        <module>nacos-discovery-spring-boot-actuator</module>
+        <module>nacos-spring-boot-samples</module>
+    </modules>
+
+    <organization>
+
+    </organization>
+
+    <scm>
+        <url>https://github.com/nacos-group/nacos-spring-boot-project</url>
+        <connection>scm:git:git:////github.com/nacos-group/nacos-spring-boot-project.git</connection>
+        <developerConnection>scm:git:ssh://git@//github.com/nacos-group/nacos-spring-boot-project.git
+        </developerConnection>
+    </scm>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/nacos-group/nacos-spring-boot-project/issues</url>
+    </issueManagement>
+
+    <mailingLists>
+
+    </mailingLists>
+    <developers>
+
+    </developers>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>core Release Repository</name>
+            <url>http://nexus.qdgwlds.com/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>core Snapshots Repository</name>
+            <url>http://nexus.qdgwlds.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
